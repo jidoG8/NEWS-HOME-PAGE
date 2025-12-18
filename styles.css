@@ -452,7 +452,7 @@ nav,
 	transform: rotate(-45deg) translate(0.625rem, -0.313rem);
 }
 
-**/* HAMBURGER MENU FADE FILTER */
+/* HAMBURGER MENU FADE FILTER */
 .hamburger__backdrop {
 	position: fixed;
 	top: 0;
