@@ -1,0 +1,135 @@
+/* DESKTOP VIEW STYLES */
+
+@media (min-width: 55rem) {
+	.header,
+	.project,
+	.nav__menu {
+		box-sizing: border-box;
+		max-width: 90rem;
+		margin: 0 auto;
+		padding-inline: 5rem;
+		max-width: 100%;
+	}
+
+	.header__logo,
+	.nav__menu {
+		box-sizing: border-box;
+	}
+
+	.nav__menu li a:hover {
+		color: var(--sf-orange);
+	}
+	.header__logo-container,
+	.header__logo {
+		margin: 0;
+		padding: 0;
+		position: static;
+		display: block;
+	}
+
+	.header__logo {
+		width: clamp(3.75rem, 5.5vw, 5rem);
+		height: auto;
+	}
+
+	.project {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 1fr;
+		gap: 2rem;
+	}
+
+	.project {
+		padding-block-start: 7.5rem;
+		padding-block-end: 7.5rem;
+	}
+
+	/* HERO ELEMENT DESIGN */
+	.hero {
+		grid-column: 1 / span 2;
+		grid-row: 1;
+	}
+
+	.hero__media img {
+		height: auto;
+	}
+
+	.hero__info {
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+		margin-block-start: 2rem;
+	}
+
+	.hero__text-container {
+		grid-column: 2 / 3;
+		margin: 0;
+		padding: 0;
+		align-self: flx-start;
+	}
+
+	.hero__text {
+		margin-block-start: 0;
+	}
+
+	.hero__title > h1 {
+		padding-block: 0;
+	}
+
+	.hero__title h1 {
+		margin: 0;
+		padding: 0;
+	}
+
+	.hero__btn {
+		margin-block-start: 1.56rem;
+	}
+
+	/* _________SIDEBAR_________*/
+	.sidebar {
+		grid-column: 3;
+		grid-row: 1;
+		font-size: inherit;
+	}
+
+	.sidebar__title {
+		margin-block-start: 0;
+		padding-block-start: 0;
+	}
+
+	/*_________SUGGESTION_________*/
+
+	.feature {
+		flex-direction: row;
+		grid-column: 1 / 4;
+	}
+
+	.feature__card {
+		line-height: 1.1;
+	}
+
+	/* Menu design */
+	.nav__menu {
+		align-items: center;
+		gap: 3rem;
+		list-style: none;
+		font-size: 1.25rem;
+		margin-inline-end: 0;
+		padding-inline: 0;
+	}
+
+	.hamburger__menu,
+	#nav__hamburger {
+		display: none;
+	}
+
+	.nav__menu li {
+		flex: 1;
+	}
+	.nav__menu > li > a {
+		text-align: center;
+	}
+
+	/* Show desktop nav */
+	#nav__desktop {
+		display: inline;
+	}
+}

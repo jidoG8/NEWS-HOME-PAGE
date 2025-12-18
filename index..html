@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./styles.css" />
+		<link rel="stylesheet" href="./media-quries.css" />
+	</head>
+	<body>
+		<!-- HEADER SECTION -->
+		<header class="header">
+			<section class="header__logo-container">
+				<img src="./assets/images/logo.svg" alt="logo" class="header__logo" />
+			</section>
+			<nav id="nav__desktop" class="nav">
+				<section class="nav__dropdown">
+					<ul class="nav__menu">
+						<li class="nav__menu-item">
+							<a href="#" class="nav__menu-link">Home</a>
+						</li>
+						<li class="nav__menu-item">
+							<a href="#" class="nav__menu-link">New</a>
+						</li>
+						<li class="nav__menu-item">
+							<a href="#" class="nav__menu-link">Popular</a>
+						</li>
+						<li class="nav__menu-item">
+							<a href="#" class="nav__menu-link">Trending</a>
+						</li>
+						<li class="nav__menu-item">
+							<a href="#" class="nav__menu-link">Categories</a>
+						</li>
+					</ul>
+				</section>
+			</nav>
+			<nav id="nav__hamburger" class="nav">
+				<section class="hamburger__menu">
+					<section class="hamburger__icon" onclick="toggleMenu()">
+						<span></span>
+						<span></span>
+						<span></span>
+					</section>
+					<section class="hamburger__links">
+						<li class="hamburger__item">
+							<a href="#" class="hamburger__link">Home</a>
+						</li>
+						<li class="hamburger__item">
+							<a href="#" class="hamburger__link">New</a>
+						</li>
+						<li class="hamburger__item">
+							<a href="#" class="hamburger__link">Popular</a>
+						</li>
+						<li class="hamburger__item">
+							<a href="#" class="hamburger__link">Trending</a>
+						</li>
+						<li class="hamburger__item">
+							<a href="#" class="hamburger__link">Categories</a>
+						</li>
+					</section>
+				</section>
+			</nav>
+			<section class="hamburger__backdrop" onclick="toggleMenu()"></section>
+		</header>
+
+		<!-- MAIN SECTIONS -->
+		<main>
+			<section class="project">
+				<!-- Header -->
+
+				<!-- Hero article -->
+				<section class="hero">
+					<picture class="hero__media">
+						<source
+							media="(min-width: 40rem )"
+							srcset="./assets/images/image-web-3-desktop.jpg"
+							class="hero__image hero__image--desktop"
+						/>
+						<img
+							src="./assets/images/image-web-3-mobile.jpg"
+							alt="image-web-3-mobile"
+							class="hero__image hero__image--mobile"
+						/>
+					</picture>
+
+					<section class="hero__info">
+						<section class="hero__title">
+							<h1>The Bright Future of Web 3.0?</h1>
+						</section>
+
+						<article class="hero__text-container">
+							<p class="hero__text">
+								We dive into the next evolution of the web that claims to put
+								the power of the platforms back into the hands of the people.
+								But is it really fulfilling its promise?
+							</p>
+							<button type="button" class="hero__btn">Read More</button>
+						</article>
+					</section>
+				</section>
+
+				<!-- SideBar -->
+				<aside class="sidebar">
+					<h1 class="sidebar__title">New</h1>
+					<section class="sidebar__article sidebar__article--1">
+						<h2 class="sidebar__heading">Hydrogen VS Electric Cars</h2>
+						<p class="sidebar__text">
+							Will Hydrogen-fueled cars ever catch up to EVs?
+						</p>
+					</section>
+					<section class="sidebar__article sidebar__article--2">
+						<h2 class="sidebar__heading">Downsides to AI Artistry</h2>
+						<p class="sidebar__text">
+							Private funding by VC firms is down 50% YOY. We take a look at
+							what that means.
+						</p>
+					</section>
+					<section class="sidebar__article sidebar__article--3">
+						<h2 class="sidebar__heading--3">Is VC Funding Drying Up?</h2>
+						<p class="sidebar__text sidebar__text--3">
+							Private funding by VC firms is down 50% YOY. We take a look at
+							what that means.
+						</p>
+					</section>
+				</aside>
+
+				<!-- suggestions -->
+				<!-- This is the flex container -->
+				<section class="feature">
+					<article class="feature__card">
+						<img
+							src="./assets/images/image-retro-pcs.jpg"
+							alt="image-retro-pcs"
+							class="feature__card-image"
+						/>
+
+						<span class="feature__card-tag">01</span>
+						<h3 class="feature__card-title">Reviving Retro PCs</h3>
+						<p class="feature__card-description">
+							What happens when old PCs are given modern upgrades?
+						</p>
+					</article>
+
+					<article class="feature__card">
+						<img
+							src="./assets/images/image-top-laptops.jpg"
+							alt="image-top-laptops"
+							class="feature__card-image"
+						/>
+
+						<span class="feature__card-tag">02</span>
+						<h3 class="feature__card-title">Top 10 Laptops of 2022</h3>
+						<p class="feature__card-description">
+							Our best picks for various needs and budgets.
+						</p>
+					</article>
+
+					<article class="feature__card">
+						<img
+							src="./assets/images/image-gaming-growth.jpg"
+							alt="the image-gaming-growth"
+							class="feature__card-image"
+						/>
+
+						<span class="feature__card-tag">03</span>
+						<h3 class="feature__card-title">The Growth of Gaming</h3>
+						<p class="feature__card-description">
+							How the pandemic has sparked fresh opportunities.
+						</p>
+					</article>
+				</section>
+			</section>
+		</main>
+		<script src="./index.js"></script>
+	</body>
+</html>

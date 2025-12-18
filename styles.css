@@ -1,0 +1,473 @@
+/*
+    @date: 2025/11/24
+    @description: Frontend Mentor | News homepage
+*/
+/*________________GENERAL STYLES FOR ELEMENTS________________*/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	font-size: clamp(0.938rem, 0.872rem + 0.282vw, 1.125rem);
+}
+
+body,
+main {
+	margin: 0;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: var(--ff);
+	background-color: var(--off-white);
+}
+
+main {
+	padding: 0;
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+	text-underline-offset: 0.5rem;
+}
+
+p {
+	color: var(--paragraph-color);
+}
+
+/*________________CUSTOM VARIABLES & COLOR THEMES________________*/
+:root {
+	/* primary */
+	--sf-orange: hsl(35, 77%, 62%);
+	--sf-red: hsl(5, 85%, 63%);
+
+	/* Neutral */
+	--off-white: #fffdfa;
+	--grayish-blue: #c5c6ce;
+	--dark-grayish-blue: hsl(236, 13%, 42%);
+	--very-dark-blue: hsl(240, 100%, 5%);
+	--gap-size: 1.5rem;
+	--paragraph-color: #4b4b58;
+	--feature-p-color: #babac4;
+
+	/* typography */
+	--fsize: 0.9375rem;
+	--ff: "Inter", sans-serif;
+	--fw400: 400;
+	--fw700: 700;
+	--fw800: 800;
+	--header-height: 6.25rem;
+	--hL-4: clamp(2rem, 1.648rem + 1.502vw, 3rem);
+	--hL-1: clamp(3rem, 2.367rem + 2.704vw, 4.5rem);
+	--hL-2: clamp(0.938rem, 0.739rem + 0.845vw, 1.5rem);
+	--hL-3: clamp(0.938rem, 0.856rem + 0.349vw, 1.17rem);
+
+	/* footer styles */
+	--footer-fsize: 0.6875rem;
+	--alignt: center;
+	--tcolor: hsl(288, 45%, 44%);
+	--btn-fsize: clamp(0.938rem, 0.871rem + 0.282vw, 1.125rem);
+}
+
+/* MOBILE FIRST APPROACH */
+
+.header,
+.project,
+.hamburger__icon span,
+.hero__media img,
+.feature__card-image,
+.feature .feature__card {
+	width: 100%;
+}
+.header,
+.project {
+	margin: 0 auto;
+	gap: 3rem;
+	padding-inline: 1rem;
+}
+
+.header__logo,
+.nav__menu {
+	box-sizing: border-box;
+	max-width: 20rem;
+}
+
+.hamburger__links a,
+.nav__menu li a,
+.hero__media img,
+.header__logo-container,
+.header__logo {
+	display: block;
+}
+
+.hero__info,
+.project {
+	display: grid;
+}
+
+.header__logo-container,
+.sidebar__article h2,
+.feature__card-description,
+.header__logo {
+	margin: 0;
+	padding: 0;
+}
+
+.header__logo-container,
+.header__logo {
+	position: static;
+}
+.header__logo,
+.hero__media img {
+	height: auto;
+}
+.hero__media img {
+	max-width: 100%;
+
+	object-fit: cover;
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1000;
+
+	align-items: center;
+	justify-content: space-between;
+
+	background-color: var(--off-white);
+	padding-block: 2rem;
+}
+
+.header__logo {
+	max-width: clamp(3.75rem, 5.5vw, 5rem);
+}
+
+.project {
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(3, auto);
+	padding-block-start: 6rem;
+}
+
+/* ASIDE STYLES */
+
+.sidebar {
+	background-color: var(--very-dark-blue);
+	color: var(--off-white);
+	background-color: #000;
+	padding: 1rem;
+	margin: 0;
+	line-height: 0.78;
+	min-width: 0;
+	font-size: inherit;
+}
+
+p {
+	margin-block: 1rem;
+	margin-inline: 0;
+	unicode-bidi: isolate;
+	display: block;
+	line-height: 1.74;
+}
+
+.sidebar__article {
+	border-block-end: 0.063rem solid white;
+
+	margin-block-start: 2rem;
+	padding-block-end: 1rem;
+	display: block;
+	unicode-bidi: isolate;
+}
+
+.sidebar__article p {
+	color: var(--feature-p-color);
+}
+
+.sidebar__article h2 {
+	font-size: 1.35rem;
+
+	padding-block: 0.5rem;
+	margin-block-end: 0;
+}
+
+.sidebar__article h2:hover {
+	color: var(--sf-orange);
+	cursor: pointer;
+}
+
+.sidebar__title {
+	font-size: var(--hL-4);
+	color: var(--sf-orange);
+	margin-block-end: 2rem;
+	padding: 0;
+}
+
+.sidebar__article--3 {
+	border-block-end: 0;
+	margin-block-end: 0;
+	padding-block-end: 0;
+}
+
+/* HERO IMAGE DESIGN */
+.hero__btn {
+	margin-block-start: 2rem;
+	padding-block: 1em;
+	border: none;
+	letter-spacing: 0.3rem;
+	background-color: var(--sf-red);
+	font-weight: var(--fw800);
+	text-transform: uppercase;
+	padding-inline: 2.5em;
+	font-size: var(--btn-fsize);
+}
+
+.hero__btn:hover {
+	background-color: black;
+	color: white;
+	cursor: pointer;
+}
+
+.hero__info {
+	gap: 0.5rem;
+	grid-template-columns: 1fr;
+	grid-auto-rows: auto;
+	align-items: stretch;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+.hero__info > * {
+	min-width: 0;
+	margin-inline: 0;
+}
+
+.hero__title h1 {
+	padding-block-start: 0;
+	line-height: 1;
+	font-size: var(--hL-1);
+	margin-block-start: 1rem;
+}
+
+.hero__text-container,
+.hero__title {
+	align-self: center;
+}
+
+.hero__text-container {
+	margin-block-end: 0;
+}
+
+.hero__text {
+	font-size: clamp(1rem, calc(1rem + 0.1878vw), 1.125rem);
+	margin-block-end: 0.5rem;
+	margin-block-start: 0;
+	line-height: 1.9;
+	padding-block: 0;
+}
+
+/* FEATURE SECTION STYLES */
+.feature {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: column;
+	margin-block-end: 16rem;
+
+	gap: 2rem;
+}
+
+.feature .feature__card {
+	display: grid;
+	grid-template-columns: clamp(5.625rem, 12vw, 7.5rem) auto;
+	grid-template-rows: repeat(3, auto);
+	column-gap: 1rem;
+
+	flex-shrink: 25rem;
+}
+
+.feature__card {
+	display: block;
+	unicode-bidi: isolate;
+	box-sizing: border-box;
+}
+
+.feature__card:last-child {
+	margin-block-end: 0;
+}
+
+.feature__card-image {
+	grid-row: 1 / span 3;
+	grid-column: 1;
+
+	height: 100%;
+	object-fit: cover;
+	margin-block-end: 0;
+}
+
+.feature__card-tag {
+	grid-row: 1;
+	grid-column: 2;
+	font-weight: var(--fw700);
+	color: var(--sf-red);
+	font-size: clamp(2.25rem, 2.074rem + 0.751vw, 2.75rem);
+	padding-block: 0;
+	margin: 0;
+}
+
+.feature__card-title {
+	grid-row: 2;
+	grid-column: 2;
+	margin: 0;
+	font-size: 1.2rem;
+	padding-block: 0.3rem;
+}
+
+.feature__card-title:hover {
+	color: var(--sf-red);
+	cursor: pointer;
+}
+
+.feature__card-description {
+	grid-row: 3;
+	grid-column: 2;
+
+	align-self: end;
+	line-height: 1.5;
+	text-wrap: wrap;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+/*________________NAVIGATION AND HAMBURGER MENU DESIGN________________*/
+nav,
+#nav__hamburger,
+.header,
+.hamburger__icon,
+.nav__menu {
+	display: flex;
+}
+
+.nav__menu {
+	justify-content: space-between;
+	align-items: flex-start;
+	list-style: none;
+	height: 100%;
+	font-size: var(--btn-fsize);
+}
+
+.nav__menu li a {
+	padding-inline-start: 0;
+	font-weight: var(--fw400);
+	color: var(--dark-grayish-blue);
+}
+
+/*--------Hamburger menu icon-------- */
+
+#nav__desktop {
+	display: none;
+}
+#nav__hamburger {
+	align-items: center;
+}
+
+.hamburger__menu,
+.hamburger__icon {
+	position: relative;
+}
+
+.hamburger__menu {
+	display: inline-block;
+}
+
+.hamburger__icon {
+	flex-direction: column;
+	justify-content: space-between;
+	height: 1.625rem;
+	width: 2.5rem;
+	cursor: pointer;
+	z-index: 1001;
+}
+
+.hamburger__icon span,
+.hamburger__links {
+	transition: transform 0.3s ease-in-out;
+}
+
+.hamburger__icon span {
+	height: 0.2rem;
+	background-color: black;
+	border-width: 8rem;
+}
+
+.hamburger__links {
+	position: fixed;
+	top: 0;
+	right: 0;
+
+	width: 70vw;
+	height: 100vh;
+	background-color: VAR(--off-white);
+	z-index: 1000;
+	padding-inline-start: 2rem;
+	transform: translateX(100%);
+}
+.hamburger__links li a:hover {
+	color: var(--sf-orange) !important;
+}
+
+.hamburger__links li {
+	list-style: none;
+	padding-inline-start: 2rem;
+}
+.hamburger__links li:first-child {
+	margin-block-start: 8rem;
+}
+
+.hamburger__links.open {
+	transform: translateX(0);
+}
+
+.hamburger__links a {
+	padding: 0.625rem;
+	font-size: 1.5rem;
+	color: black;
+	text-decoration: none;
+}
+
+/*--------Hamburger Menu & icon--------*/
+.hamburger__icon.open span:first-child {
+	transform: rotate(45deg) translate(0.625rem, 0.313rem);
+}
+
+.hamburger__icon.open span:nth-child(2) {
+	opacity: 0;
+}
+.hamburger__icon.open span:last-child {
+	transform: rotate(-45deg) translate(0.625rem, -0.313rem);
+}
+
+**/* HAMBURGER MENU FADE FILTER */
+.hamburger__backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--dark-grayish-blue);
+	z-index: 999;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.hamburger__backdrop.open {
+	opacity: 0.5;
+	visibility: visible;
+}
+**
