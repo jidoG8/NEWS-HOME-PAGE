@@ -226,7 +226,7 @@ p {
 /*________HERO IMAGE DESIGN________*/
 .hero__btn {
 	margin-block-start: 2rem;
-	padding-block: 2em;
+	padding-block: 1em;
 	border: none;
 	letter-spacing: 0.3rem;
 	background-color: var(--sf-red);
