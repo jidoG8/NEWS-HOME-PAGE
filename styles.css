@@ -2,6 +2,7 @@
     @date: 2025/11/24
     @description: Frontend Mentor | News homepage
 */
+
 /*________________GENERAL STYLES FOR ELEMENTS________________*/
 *,
 *::before,
@@ -36,16 +37,26 @@ a:hover {
 }
 
 p {
+	/* Typography */
 	color: var(--paragraph-color);
+	line-height: 1.74;
+
+	/* Box model */
+	margin-block: 1rem;
+	margin-inline: 0;
+
+	/* Display properties */
+	display: block;
+	unicode-bidi: isolate;
 }
 
 /*________________CUSTOM VARIABLES & COLOR THEMES________________*/
 :root {
-	/* primary */
+	/* Primary brand colors */
 	--sf-orange: hsl(35, 77%, 62%);
 	--sf-red: hsl(5, 85%, 63%);
 
-	/* Neutral */
+	/* Neutral color palette */
 	--off-white: #fffdfa;
 	--grayish-blue: #c5c6ce;
 	--dark-grayish-blue: hsl(236, 13%, 42%);
@@ -54,19 +65,21 @@ p {
 	--paragraph-color: #4b4b58;
 	--feature-p-color: #babac4;
 
-	/* typography */
+	/* Typography system */
 	--fsize: 0.9375rem;
 	--ff: "Inter", sans-serif;
 	--fw400: 400;
 	--fw700: 700;
 	--fw800: 800;
 	--header-height: 6.25rem;
+
+	/* Responsive heading sizes using clamp() */
 	--hL-4: clamp(2rem, 1.648rem + 1.502vw, 3rem);
 	--hL-1: clamp(3rem, 2.367rem + 2.704vw, 4.5rem);
 	--hL-2: clamp(0.938rem, 0.739rem + 0.845vw, 1.5rem);
 	--hL-3: clamp(0.938rem, 0.856rem + 0.349vw, 1.17rem);
 
-	/* footer styles */
+	/* Button and footer styles */
 	--footer-fsize: 0.6875rem;
 	--alignt: center;
 	--tcolor: hsl(288, 45%, 44%);
@@ -155,25 +168,21 @@ p {
 	padding-block-start: 6rem;
 }
 
-/* ASIDE STYLES */
+/*________ASIDE STYLES________*/
 
 .sidebar {
-	background-color: var(--very-dark-blue);
-	color: var(--off-white);
-	background-color: #000;
+	/* Layout */
 	padding: 1rem;
 	margin: 0;
-	line-height: 0.78;
 	min-width: 0;
-	font-size: inherit;
-}
 
-p {
-	margin-block: 1rem;
-	margin-inline: 0;
-	unicode-bidi: isolate;
-	display: block;
-	line-height: 1.74;
+	/* Visual */
+	background-color: var(--very-dark-blue);
+	color: var(--off-white);
+
+	/* Typography */
+	font-size: inherit;
+	line-height: 0.78;
 }
 
 .sidebar__article {
@@ -214,7 +223,7 @@ p {
 	padding-block-end: 0;
 }
 
-/* HERO IMAGE DESIGN */
+/*________HERO IMAGE DESIGN________*/
 .hero__btn {
 	margin-block-start: 2rem;
 	padding-block: 1em;
@@ -271,7 +280,7 @@ p {
 	padding-block: 0;
 }
 
-/* FEATURE SECTION STYLES */
+/*________FEATURE SECTION STYLES________*/
 .feature {
 	display: flex;
 	justify-content: flex-start;
@@ -283,12 +292,14 @@ p {
 }
 
 .feature .feature__card {
+	/* Grid layout */
 	display: grid;
 	grid-template-columns: clamp(5.625rem, 12vw, 7.5rem) auto;
 	grid-template-rows: repeat(3, auto);
 	column-gap: 1rem;
 
-	flex-shrink: 25rem;
+	/* Flex properties */
+	flex-shrink: 1;
 }
 
 .feature__card {
@@ -367,7 +378,7 @@ nav,
 	color: var(--dark-grayish-blue);
 }
 
-/*--------Hamburger menu icon-------- */
+/*________HAMBURGER-MENU-ICON________ */
 
 #nav__desktop {
 	display: none;
@@ -402,18 +413,23 @@ nav,
 .hamburger__icon span {
 	height: 0.2rem;
 	background-color: black;
-	border-width: 8rem;
 }
 
 .hamburger__links {
+	/* Positioning */
 	position: fixed;
 	top: 0;
 	right: 0;
+	z-index: 1000;
 
+	/* Dimensions */
 	width: 70vw;
 	height: 100vh;
-	background-color: VAR(--off-white);
-	z-index: 1000;
+
+	/* Visual */
+	background-color: var(--off-white);
+
+	/* Layout */
 	padding-inline-start: 2rem;
 	transform: translateX(100%);
 }
@@ -440,7 +456,7 @@ nav,
 	text-decoration: none;
 }
 
-/*--------Hamburger Menu & icon--------*/
+/*--------hamburger icon design--------*/
 .hamburger__icon.open span:first-child {
 	transform: rotate(45deg) translate(0.625rem, 0.313rem);
 }
@@ -452,7 +468,7 @@ nav,
 	transform: rotate(-45deg) translate(0.625rem, -0.313rem);
 }
 
-/* HAMBURGER MENU FADE FILTER */
+/*_____________HAMBURGER MENU FADE FILTER_____________*/
 .hamburger__backdrop {
 	position: fixed;
 	top: 0;
@@ -469,4 +485,140 @@ nav,
 .hamburger__backdrop.open {
 	opacity: 0.5;
 	visibility: visible;
+}
+
+/*_____________DESKTOP VIEW STYLES_____________*/
+
+@media (min-width: 55rem) {
+	.header,
+	.project,
+	.nav__menu {
+		/* Box model */
+		box-sizing: border-box;
+		max-width: 100%;
+		margin: 0 auto;
+		padding-inline: 5rem;
+	}
+
+	.header__logo,
+	.nav__menu {
+		box-sizing: border-box;
+	}
+
+	.nav__menu li a:hover {
+		color: var(--sf-orange);
+	}
+	.header__logo-container,
+	.header__logo {
+		margin: 0;
+		padding: 0;
+		position: static;
+		display: block;
+	}
+
+	.header__logo {
+		width: clamp(3.75rem, 5.5vw, 5rem);
+		height: auto;
+	}
+
+	.project {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 1fr;
+		gap: 2rem;
+	}
+
+	.project {
+		padding-block-start: 7.5rem;
+		padding-block-end: 7.5rem;
+	}
+
+	/* HERO ELEMENT DESIGN */
+	.hero {
+		grid-column: 1 / span 2;
+		grid-row: 1;
+	}
+
+	.hero__media img {
+		height: auto;
+	}
+
+	.hero__info {
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+		margin-block-start: 2rem;
+	}
+
+	.hero__text-container {
+		grid-column: 2 / 3;
+		margin: 0;
+		padding: 0;
+		align-self: flx-start;
+	}
+
+	.hero__text {
+		margin-block-start: 0;
+	}
+
+	.hero__title > h1 {
+		padding-block: 0;
+	}
+
+	.hero__title h1 {
+		margin: 0;
+		padding: 0;
+	}
+
+	.hero__btn {
+		margin-block-start: 1.56rem;
+	}
+
+	/* _________SIDEBAR_________*/
+	.sidebar {
+		grid-column: 3;
+		grid-row: 1;
+		font-size: inherit;
+	}
+
+	.sidebar__title {
+		margin-block-start: 0;
+		padding-block-start: 0;
+	}
+
+	/*_________SUGGESTION_________*/
+
+	.feature {
+		flex-direction: row;
+		grid-column: 1 / 4;
+	}
+
+	.feature__card {
+		line-height: 1.1;
+	}
+
+	/* Menu design */
+	.nav__menu {
+		align-items: center;
+		gap: 3rem;
+		list-style: none;
+		font-size: 1.25rem;
+		margin-inline-end: 0;
+		padding-inline: 0;
+	}
+
+	.hamburger__menu,
+	#nav__hamburger {
+		display: none;
+	}
+
+	.nav__menu li {
+		flex: 1;
+	}
+	.nav__menu > li > a {
+		text-align: center;
+	}
+
+	/* Show desktop nav */
+	#nav__desktop {
+		display: inline;
+	}
 }
