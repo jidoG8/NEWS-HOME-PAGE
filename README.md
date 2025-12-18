@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Checkout the source code👩🏿‍🍳](https://github.com/jidoG8/NEWS-HOME-PAGE.git)
+- Live Site URL: [Checkout the live preview here👀](https://your-live-site-url.com)
 
 ## My process
 
