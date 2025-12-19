@@ -299,7 +299,7 @@ p {
 .feature .feature__card {
 	/* Grid layout */
 	display: grid;
-	grid-template-columns: clamp(5.625rem, 12vw, 7.5rem) auto;
+	grid-template-columns: 6.25rem auto; /* Fixed image size - no scaling */
 	grid-template-rows: repeat(3, auto);
 	column-gap: 1rem;
 
@@ -342,6 +342,11 @@ p {
 	margin: 0;
 	font-size: 1.2rem;
 	padding-block: 0.3rem;
+	
+	/* Single line with ellipsis */
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .feature__card-title:hover {
@@ -355,9 +360,13 @@ p {
 
 	align-self: end;
 	line-height: 1.5;
-	text-wrap: wrap;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
+	
+	/* Limit to 2 lines with ellipsis */
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 /*________________NAVIGATION AND HAMBURGER MENU DESIGN________________*/
