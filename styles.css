@@ -237,7 +237,7 @@ p {
 	background-color: var(--sf-red);
 	font-weight: var(--fw800);
 	text-transform: uppercase;
-	padding-inline: 2.5em;
+	padding-inline: 3rem;
 	font-size: var(--btn-fsize);
 }
 
