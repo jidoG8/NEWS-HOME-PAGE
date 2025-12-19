@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Checkout the source code👩🏿‍🍳](https://github.com/jidoG8/NEWS-HOME-PAGE.git)
-- Live Site URL: [Checkout the live preview here👀](https://jidog8.github.io/NEWS-HOME-PAGE/)
+- Live Site URL: [Checkout the live preview here👀](https://jidog8.github.io/NEWS-HOME-PAGE/#)
 
 ## My process
 
